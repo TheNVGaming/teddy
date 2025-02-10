@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teddy Day Surprise</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        
+        body {
+            background-color: #ffccdd;
+            text-align: center;
+            font-family: 'Pacifico', cursive;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            color: #d63384;
+            font-size: 3.5rem;
+            text-shadow: 2px 2px 5px #ff99bb;
+            display: none;
+        }
+        .btn {
+            background-color: #d63384;
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .btn:hover {
+            background-color: #a61e6c;
+            transform: scale(1.1);
+        }
+        .teddy {
+            display: none;
+            position: relative;
+            margin-top: 30px;
+            animation: bounce 1s infinite alternate;
+        }
+        .teddy img {
+            width: 500px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <audio id="song" loop>
+        <source src="steal-my-girl.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+    
+    <div class="container">
+        <h1 id="message">Happy Teddy Day, My PookieBear! 🧸💕</h1>
+        <button class="btn" onclick="showTeddy()" id="surpriseBtn">Click for a Cute Surprise! 🎁</button>
+        <div id="teddy" class="teddy">
+            <img src="https://images-ext-1.discordapp.net/external/nMZu9uIZq4_yyGBfMrpVntnaFrRYd-wrcFeQ3On2Ya4/https/media.tenor.com/Waa-Cz3AHOYAAAAi/dudu.gif?width=160&height=160" alt="Cute Teddy Bear">
+        </div>
+    </div>
+    
+    <script>
+        function showTeddy() {
+            document.getElementById('teddy').style.display = 'block';
+            document.getElementById('message').style.display = 'block';
+            document.getElementById('surpriseBtn').style.display = 'none';
+            document.getElementById('song').play();
+        }
+    </script>
+</body>
+</html>
