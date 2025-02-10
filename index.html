@@ -15,11 +15,14 @@
         .container {
             margin-top: 50px;
         }
-        h1 {
+        h1, p {
             color: #d63384;
-            font-size: 3.5rem;
+            font-size: 2rem;
             text-shadow: 2px 2px 5px #ff99bb;
             display: none;
+        }
+        h1 {
+            font-size: 3.5rem;
         }
         .btn {
             background-color: #d63384;
@@ -31,6 +34,7 @@
             border-radius: 50px;
             transition: all 0.3s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 10px;
         }
         .btn:hover {
             background-color: #a61e6c;
@@ -61,17 +65,20 @@
     </audio>
     
     <div class="container">
-        <h1 id="message">Happy Teddy Day, My PookieBear! 🧸💕</h1>
         <button class="btn" onclick="showTeddy()" id="surpriseBtn">Click for a Cute Surprise! 🎁</button>
         <div id="teddy" class="teddy">
             <img src="https://images-ext-1.discordapp.net/external/nMZu9uIZq4_yyGBfMrpVntnaFrRYd-wrcFeQ3On2Ya4/https/media.tenor.com/Waa-Cz3AHOYAAAAi/dudu.gif?width=160&height=160" alt="Cute Teddy Bear">
         </div>
+        <h1 id="message" style="display: none;">Happy Teddy Day, My PookieBear! 🧸💕</h1>
+        <button class="btn" onclick="showMessage()" id="messageBtn" style="display: none;">Click Here 💌</button>
+        <p id="loveMessage" style="display: none;">Happy Teddy Day, my sweetheart! 🧸 If I could be any teddy bear, I’d choose to be the one that brings endless smiles to your face and warmth to your heart. You make everything in my world extra special, just like a bear hug from you would. Can’t wait to hold you close forever! 💖</p>
     </div>
     
     <script>
         function showTeddy() {
             document.getElementById('teddy').style.display = 'block';
             document.getElementById('message').style.display = 'block';
+            document.getElementById('messageBtn').style.display = 'inline-block';
             document.getElementById('surpriseBtn').style.display = 'none';
             let song = document.getElementById('song');
             song.currentTime = 144; // Start at 2:24 (144 seconds)
@@ -79,6 +86,13 @@
             setTimeout(() => {
                 song.pause();
             }, 24000); // Stop at 2:48 (24 seconds later)
+        }
+
+        function showMessage() {
+            document.getElementById('loveMessage').style.display = 'block';
+            document.getElementById('messageBtn').style.display = 'none';
+            document.getElementById('message').style.display = 'none';
+            document.getElementById('teddy').style.display = 'none';
         }
     </script>
 </body>
