@@ -55,7 +55,7 @@
     </style>
 </head>
 <body>
-    <audio id="song" loop>
+    <audio id="song">
         <source src="steal-my-girl.mp3" type="audio/mp3">
         Your browser does not support the audio tag.
     </audio>
@@ -73,7 +73,12 @@
             document.getElementById('teddy').style.display = 'block';
             document.getElementById('message').style.display = 'block';
             document.getElementById('surpriseBtn').style.display = 'none';
-            document.getElementById('song').play();
+            let song = document.getElementById('song');
+            song.currentTime = 144; // Start at 2:24 (144 seconds)
+            song.play();
+            setTimeout(() => {
+                song.pause();
+            }, 24000); // Stop at 2:48 (24 seconds later)
         }
     </script>
 </body>
